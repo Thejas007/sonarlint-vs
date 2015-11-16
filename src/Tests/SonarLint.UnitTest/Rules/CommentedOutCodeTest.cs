@@ -31,6 +31,7 @@ namespace SonarLint.UnitTest.Rules
         public void CommentedOutCode()
         {
             Verifier.VerifyAnalyzer(@"TestCases\CommentedOutCode.cs", new CommentedOutCode());
+            Verifier.VerifyCodeFix(@"TestCases\CommentedOutCode.cs", @"TestCases\CommentedOutCode.Fixed.cs", new CommentedOutCode(),new CommentedOutCodeCodeFixProvider());
         }
     }
 }
